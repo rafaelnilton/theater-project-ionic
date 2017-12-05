@@ -31,6 +31,6 @@ import { DatePickerModule } from 'datepicker-ionic2';
     AddItemPage,
     ItemDetailPage,
   ],
-  providers: [Data, StatusBar, SplashScreen, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Data, StatusBar, SplashScreen, DatePickerModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

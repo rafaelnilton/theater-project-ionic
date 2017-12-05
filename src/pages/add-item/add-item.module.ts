@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { AddItemPage } from './add-item';
+import { DatePickerModule } from 'datepicker-ionic2'
 
 
 @NgModule({
@@ -9,6 +10,7 @@ import { AddItemPage } from './add-item';
   ],
   imports: [
     IonicPageModule.forChild(AddItemPage),
+    DatePickerModule
   ],
 })
 export class AddItemPageModule {}

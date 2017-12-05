@@ -5,6 +5,7 @@ import { DatePickerModule } from 'datepicker-ionic2';
 @Component({
   selector: 'page-add-item',
   templateUrl: 'add-item.html',
+  
 })
 export class AddItemPage {
  
@@ -43,7 +44,8 @@ export class AddItemPage {
  
     let newItem = {
       title: this.title,
-      description: this.description
+      description: this.description,
+      date: this.localDate
     };
  
     this.view.dismiss(newItem);

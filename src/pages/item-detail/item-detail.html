@@ -6,8 +6,11 @@
   </ion-navbar>
 </ion-header>
  
-<ion-content>
+<ion-content padding class="bg-teatro">
   <ion-card>
+    <ion-card-content>
+      {{date | date: 'dd/MM/yyyy' }} - {{title}}
+    </ion-card-content>
     <ion-card-content>
       {{description}}
     </ion-card-content>
