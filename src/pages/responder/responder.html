@@ -20,12 +20,10 @@
 <ion-content padding class="bg-teatro">
 
   
-    <ion-item>
-      <h2>{{pergunta}}</h2>
-    </ion-item>
-
-    <ion-item>
-      <ion-textarea type="text" [(ngModel)]="resposta" [ngModelOptions]="{standalone: true}"></ion-textarea>
+  
+  <ion-item>
+      <p>Vocês utilizariam esta tecnologia nos seus projetos? Justifique</p>
+      <ion-input type="text" [(ngModel)]="resposta" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
 
     <ion-item style="background: none !important">

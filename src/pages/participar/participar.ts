@@ -19,7 +19,7 @@ export class ParticiparPage {
     console.log('ionViewDidLoad ParticiparPage');
   }
 
-  responderModal() {
+  public responderModal() {
     let myModal = this.modalCtrl.create(ResponderPage);
     myModal.present();
   }

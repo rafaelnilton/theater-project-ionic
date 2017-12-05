@@ -25,7 +25,6 @@ export class HomePage {
 
   }
  
- 
   addItem(){
  
     let addModal = this.modalCtrl.create(AddItemPage);
