@@ -3,7 +3,10 @@ import { ModalController, NavController } from 'ionic-angular';
 import { AddItemPage } from '../add-item/add-item'
 import { ItemDetailPage } from '../item-detail/item-detail';
 import { Data } from '../../providers/data/data';
-import { StoryPhotoPage } from '../../pages/story-photo/story-photo'
+import { Http} from '@angular/http';
+import 'rxjs/add/operator/map';
+import { Observable } from "rxjs/Rx"
+
  
 @Component({
   selector: 'page-home',
@@ -12,10 +15,10 @@ import { StoryPhotoPage } from '../../pages/story-photo/story-photo'
 export class HomePage {
  
   public items = [];
- 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public dataService: Data) {
  
-    this.dataService.getData().then((todos) => {
+
+    this.dataService.getData().subscribe(todos => {
  
       if(todos){
         this.items = todos;
@@ -23,10 +26,7 @@ export class HomePage {
  
     });
  
-  }
 
-  goToStory(){
-    this.navCtrl.push(StoryPhotoPage)
   }
  
   ionViewDidLoad(){

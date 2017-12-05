@@ -16,9 +16,7 @@
   <div class="logo">
       <img src="assets/imgs/logo.png" />
   </div>
-  <ion-item>
-      <button ion-button="" full (click)="goToStory()">Go to Story</button>
-  </ion-item>
+
   <ion-list padding>
     <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.date | date: 'dd/MM/yyyy' }} - {{item.title}}</ion-item>
   </ion-list>

@@ -10,22 +10,21 @@ import { Data } from '../providers/data/data';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DatePickerModule } from 'datepicker-ionic2';
-import { StoryPhotoPage } from '../pages/story-photo/story-photo'
-import { CameraPreview } from '@ionic-native/camera-preview'
+import { HttpModule } from '@angular/http';
  
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AddItemPage,
-    ItemDetailPage,
-    StoryPhotoPage
+    ItemDetailPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    DatePickerModule
+    DatePickerModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,6 +33,6 @@ import { CameraPreview } from '@ionic-native/camera-preview'
     AddItemPage,
     ItemDetailPage,
   ],
-  providers: [Data, CameraPreview, StatusBar, SplashScreen, DatePickerModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Data, StatusBar, SplashScreen, DatePickerModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
