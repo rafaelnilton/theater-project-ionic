@@ -15,6 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ResponderPage {
 
+  public pergunta: String = new String('Vocês utilizariam esta tecnologia nos seus projetos? Justifique');
+  public resposta: String = new String('');
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

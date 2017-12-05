@@ -20,6 +20,7 @@ export class HomePage {
 
     this.dataService.getData().subscribe(todos => {
  
+      console.log(">>>>>>>>>>>todos: ", todos);
       if(todos){
         this.items = todos;
       }

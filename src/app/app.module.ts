@@ -43,7 +43,7 @@ import { ResponderPage } from '../pages/responder/responder';
     HistoriaPage,
     ContatoPage,
     ParticiparPage,
-    ResponderPage,
+    ResponderPage
   ],
   providers: [Data, StatusBar, SplashScreen, DatePickerModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
