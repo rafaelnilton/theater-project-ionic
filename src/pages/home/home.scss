@@ -1,3 +1,29 @@
 page-home {
 
 }
+
+.bg-teatro {
+    background: url("../assets/imgs/bg.png") no-repeat 47% 12%;
+}
+
+.toolbar-md-secondary .toolbar-background-md {
+    background-color: rgba(107,34,53,0.9) !important;
+    color: rgba(107,34,53, 1) !important
+}
+
+// .toolbar-title-md {
+//     color: rgba(107,34,53, 1) !important
+// }
+.logo img {
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+
+.menu-inner .content-md {
+    background-color: rgba(107,34,53,1) !important;
+}
+
+.button-md-secondary {
+    background-color: rgba(107,34,53,1) !important;
+}

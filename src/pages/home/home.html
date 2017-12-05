@@ -4,7 +4,7 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     <ion-title class="title-sm center" align-title="center">
-      Eventos do teatro
+      Teatro Facisa
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
@@ -12,7 +12,10 @@
   </ion-navbar>
 </ion-header>
  
-<ion-content>
+<ion-content class="bg-teatro">
+  <div class="logo">
+      <img src="assets/imgs/logo.png" />
+  </div>
   <ion-list>
     <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.title}}</ion-item>
   </ion-list>

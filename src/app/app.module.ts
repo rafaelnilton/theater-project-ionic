@@ -9,6 +9,7 @@ import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { Data } from '../providers/data/data';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DatePickerModule } from 'datepicker-ionic2';
  
 @NgModule({
   declarations: [
@@ -20,14 +21,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    DatePickerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     AddItemPage,
-    ItemDetailPage
+    ItemDetailPage,
   ],
   providers: [Data, StatusBar, SplashScreen, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

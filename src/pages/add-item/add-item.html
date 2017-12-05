@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>
-      Add Item
+      Adicionar evento
     </ion-title>
       <ion-buttons end>
         <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
@@ -13,17 +13,24 @@
   <ion-list>
  
     <ion-item>
-      <ion-label floating>Title</ion-label>
+      <ion-label floating>Título</ion-label>
       <ion-input type="text" [(ngModel)]="title"></ion-input>
     </ion-item>
  
     <ion-item>
-      <ion-label floating>Description</ion-label>
-      <ion-input type="text" [(ngModel)]="description"></ion-input>
+      <ion-label floating>Descrição do evento</ion-label>
+      <ion-textarea type="text" [(ngModel)]="description"></ion-textarea>
     </ion-item>
- 
+
+    <ion-item>
+      <p>Selecione a data do evento</p>
+      <span ion-datepicker (ionChanged)="setDate($event);" [value]="localDate" [min]="localDate" full="true" calendar="true" clear class="ScheduleDate">
+          <span>{{localDate | date}} <ion-icon name="clipboard" item-left ></ion-icon> </span>
+      </span>
+    </ion-item>
+
   </ion-list>
  
-  <button full ion-button color="secondary" (click)="saveItem()">Save</button>
+  <button full ion-button color="secondary" (click)="saveItem()">Salvar</button>
  
 </ion-content>
