@@ -25,7 +25,7 @@ import { ResponderPage } from '../pages/responder/responder';
     HistoriaPage,
     ContatoPage,
     ParticiparPage,
-    ResponderPage
+    ResponderPage,
   ],
   imports: [
     BrowserModule,

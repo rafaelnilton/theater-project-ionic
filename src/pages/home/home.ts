@@ -15,18 +15,13 @@ import { Observable } from "rxjs/Rx"
 export class HomePage {
  
   public items = [];
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public dataService: Data) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public dataService: Data, public http: Http) {
  
 
-    this.dataService.getData().subscribe(todos => {
- 
-      console.log(">>>>>>>>>>>todos: ", todos);
-      if(todos){
-        this.items = todos;
-      }
- 
+    this.http.get('http://teatrofacisa.m1ller.com.br/api/eventos').map(res => res.json()).subscribe(data => {
+      console.log(">>>>>>>>>>>todos: ", data);
+        this.items = data;
     });
- 
 
   }
  
@@ -43,8 +38,7 @@ export class HomePage {
  
     });
  
-    addModal.present();
- 
+    addModal.present(); 
   }
  
   saveItem(item){

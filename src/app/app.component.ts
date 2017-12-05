@@ -22,7 +22,7 @@ export class MyApp {
       { title: 'Eventos', component: HomePage },
       { title: 'Participar', component: ParticiparPage },
       { title: 'História', component: HistoriaPage },
-      { title: 'Contato', component: ContatoPage },
+      { title: 'Contato', component: ContatoPage }
     ];
 
     platform.ready().then(() => {

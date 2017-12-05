@@ -19,9 +19,12 @@ export class Data {
   }
  
   
-  getData() {
-    return this.http.get('http://teatrofacisa.m1ller.com.br/api/eventos', this.headers()).map(res => res.json());
-  }
+  // getData() {
+  //   return this.http.get('http://teatrofacisa.m1ller.com.br/api/eventos', this.headers()).success(function(data){
+      
+  //       $scope.search = data;
+  //     });
+  // }
  
   save(data){
     this.storage.set('todos', data);
