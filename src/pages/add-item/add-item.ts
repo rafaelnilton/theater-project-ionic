@@ -28,7 +28,7 @@ export class AddItemPage {
   }
 
   public ngOnInit() {
-    
+
   }
     
   public event(data: Date): void {

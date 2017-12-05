@@ -6,9 +6,22 @@ page-home {
     background: url("../assets/imgs/bg.png") no-repeat 47% 12%;
 }
 
-.toolbar-md-secondary .toolbar-background-md {
+.toolbar-md-secondary .toolbar-background-md, .toolbar-background-md {
     background-color: rgba(107,34,53,0.9) !important;
-    color: rgba(107,34,53, 1) !important
+}
+
+.footer .toolbar .toolbar-background-md {
+    background: none !important;
+    color: white !important;
+}
+
+.toolbar-title-md {
+    color: white !important;
+}
+
+.title-footer div {
+    font-size: 15px !important;
+    font-weight: 300 !important;
 }
 
 // .toolbar-title-md {
@@ -27,4 +40,8 @@ page-home {
 
 .button-md-secondary {
     background-color: rgba(107,34,53,1) !important;
+}
+
+.title-center {
+    text-align: center;
 }

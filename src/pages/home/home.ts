@@ -3,6 +3,7 @@ import { ModalController, NavController } from 'ionic-angular';
 import { AddItemPage } from '../add-item/add-item'
 import { ItemDetailPage } from '../item-detail/item-detail';
 import { Data } from '../../providers/data/data';
+import { StoryPhotoPage } from '../../pages/story-photo/story-photo'
  
 @Component({
   selector: 'page-home',
@@ -22,6 +23,10 @@ export class HomePage {
  
     });
  
+  }
+
+  goToStory(){
+    this.navCtrl.push(StoryPhotoPage)
   }
  
   ionViewDidLoad(){

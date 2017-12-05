@@ -3,12 +3,12 @@
       <button menuToggle ion-button>
         <ion-icon name="menu"></ion-icon>
       </button>
-    <ion-title class="title-sm center" align-title="center">
+    <ion-title class="title-sm center title-center" align-title="center" >
       Teatro Facisa
     </ion-title>
-    <ion-buttons end>
+    <!-- <ion-buttons end>
       <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-navbar>
 </ion-header>
  
@@ -16,7 +16,16 @@
   <div class="logo">
       <img src="assets/imgs/logo.png" />
   </div>
+  <ion-item>
+      <button ion-button="" full (click)="goToStory()">Go to Story</button>
+  </ion-item>
   <ion-list padding>
     <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.date | date: 'dd/MM/yyyy' }} - {{item.title}}</ion-item>
   </ion-list>
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-title class="title-center title-footer">teatro@unifacisa.edu.br</ion-title>
+    </ion-toolbar>
+  </ion-footer>
