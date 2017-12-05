@@ -11,13 +11,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DatePickerModule } from 'datepicker-ionic2';
 import { HttpModule } from '@angular/http';
+import { HistoriaPage } from '../pages/historia/historia';
  
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AddItemPage,
-    ItemDetailPage
+    ItemDetailPage,
+    HistoriaPage
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { HttpModule } from '@angular/http';
     HomePage,
     AddItemPage,
     ItemDetailPage,
+    HistoriaPage
   ],
   providers: [Data, StatusBar, SplashScreen, DatePickerModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
