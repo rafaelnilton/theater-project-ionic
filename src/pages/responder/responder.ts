@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ResponderPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -18,13 +11,15 @@ export class ResponderPage {
   public pergunta: String = new String('Vocês utilizariam esta tecnologia nos seus projetos? Justifique');
   public resposta: String = new String('');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ResponderPage');
+    console.log('ionViewDidLoad ResponderPage')
   }
 
-  
+  closeModal() {
+    this.view.dismiss();
+  }
 
 }

@@ -7,9 +7,9 @@ import { NavParams } from 'ionic-angular';
 })
 export class ItemDetailPage {
  
-  titulo;
-  descricao;
-  data;
+  public titulo;
+  public descricao;
+  public data;
  
   constructor(public navParams: NavParams){
  

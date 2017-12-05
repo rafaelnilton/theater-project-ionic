@@ -20,7 +20,7 @@ export class ParticiparPage {
   }
 
   public responderModal() {
-    let myModal = this.modalCtrl.create(ResponderPage);
+    var myModal = this.modalCtrl.create(ResponderPage);
     myModal.present();
   }
 

@@ -16,9 +16,12 @@
       <img src="assets/imgs/logo.png" />
   </div>
 
-  <ion-list padding>
-    <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.data | date: 'dd/MM/yyyy' }} - {{item.titulo}}</ion-item>
-  </ion-list>
+  <h3 style="color: white; text-align: center; font-weight: 300">ÚLTIMOS EVENTOS</h3>
+
+    <ion-list padding>
+      <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.data | date: 'dd/MM/yyyy' }} - {{item.titulo}}</ion-item>
+      <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item.data | date: 'dd/MM/yyyy' }} - {{item.titulo}}</ion-item>
+    </ion-list>
 </ion-content>
 
 <ion-footer>
