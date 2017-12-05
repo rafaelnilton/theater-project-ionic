@@ -12,6 +12,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { DatePickerModule } from 'datepicker-ionic2';
 import { HttpModule } from '@angular/http';
 import { HistoriaPage } from '../pages/historia/historia';
+import { ContatoPage } from '../pages/contato/contato';
+import { ParticiparPage } from '../pages/participar/participar';
+import { ResponderPage } from '../pages/responder/responder';
  
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HistoriaPage } from '../pages/historia/historia';
     HomePage,
     AddItemPage,
     ItemDetailPage,
-    HistoriaPage
+    HistoriaPage,
+    ContatoPage,
+    ParticiparPage,
+    ResponderPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,10 @@ import { HistoriaPage } from '../pages/historia/historia';
     HomePage,
     AddItemPage,
     ItemDetailPage,
-    HistoriaPage
+    HistoriaPage,
+    ContatoPage,
+    ParticiparPage,
+    ResponderPage,
   ],
   providers: [Data, StatusBar, SplashScreen, DatePickerModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

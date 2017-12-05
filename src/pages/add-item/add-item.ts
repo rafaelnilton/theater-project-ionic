@@ -28,6 +28,7 @@ export class AddItemPage {
   }
 
   public ngOnInit() {
+    this.localDate = new Date();
 
   }
     

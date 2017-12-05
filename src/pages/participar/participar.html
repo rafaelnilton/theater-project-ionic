@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="secondary" align-title="center">
+      <button menuToggle ion-button>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title class="title-sm center" align-title="center" >
+      Participar
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="bg-teatro">
+
+
+  <ion-item style="margin-top: 30px; background: none !important">
+    <button class="bt-participar" ion-button round outline>PERGUNTAR</button>
+  </ion-item>
+
+  <ion-item style="background: none !important">
+    <button class="bt-participar responder" (click)="responderModal()" ion-button round>RESPONDER</button>
+  </ion-item>
+
+</ion-content>
