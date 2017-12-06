@@ -8,12 +8,12 @@
  
 <ion-content padding class="bg-teatro">
   <ion-card>
-    <!-- <img style="width: 50%; margin: 0 auto; display: block;" src="{{imagem}}" /> -->
+      <ion-item style="background: none !important">
+        <button class="bt-participar responder" (click)="responderModal()" ion-button round>RESPONDER</button>
+      </ion-item>
     <ion-card-content>
-      {{data | date: 'dd/MM/yyyy' }} - {{titulo}}
     </ion-card-content>
     <ion-card-content>
-      {{descricao}}
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -22,6 +22,7 @@ page-home {
 .title-footer div {
     font-size: 15px !important;
     font-weight: 300 !important;
+    font-size: 10px;
 }
 
 // .toolbar-title-md {
@@ -36,6 +37,18 @@ page-home {
     display: block;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.logo-rodape {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: -10px;
+}
+    
+
+ion-item {
+    background-color: rgba(255, 255, 255, 0.90) !important;
 }
 
 .menu-inner .content-md {

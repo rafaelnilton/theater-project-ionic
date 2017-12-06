@@ -12,16 +12,13 @@ import { ResponderPage } from '../responder/responder';
 })
 export class ParticiparPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ParticiparPage');
   }
 
-  public responderModal() {
-    var myModal = this.modalCtrl.create(ResponderPage);
-    myModal.present();
-  }
+
 
 }
