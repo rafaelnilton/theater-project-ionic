@@ -6,7 +6,11 @@
         </ion-toolbar>
         <ion-list>
             <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-            {{p.title}}
+            <ion-icon *ngIf="p.title == 'Eventos'" ios="ios-calendar" md="md-calendar"></ion-icon>
+            <ion-icon *ngIf="p.title == 'Participar'" ios="ios-chatbubbles" md="md-chatbubbles"></ion-icon>
+            <ion-icon *ngIf="p.title == 'História'" ios="ios-information-circle" md="md-information-circle"></ion-icon>
+            <ion-icon *ngIf="p.title == 'Contato'"  ios="ios-mail" md="md-mail"></ion-icon>
+             {{p.title}}
             </button>
         </ion-list>
     </ion-content>
