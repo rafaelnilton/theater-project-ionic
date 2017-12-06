@@ -1,21 +1,20 @@
 <ion-header>
   <ion-navbar color="secondary">
     <ion-title>
-      {{titulo}}
+      PERGUNTAS
     </ion-title>
   </ion-navbar>
 </ion-header>
  
 <ion-content padding class="bg-teatro">
-  <ion-card>
-      <ion-item style="background: none !important">
-        <button class="bt-participar responder" (click)="responderModal()" ion-button round>RESPONDER</button>
-      </ion-item>
-    <ion-card-content>
-    </ion-card-content>
-    <ion-card-content>
-    </ion-card-content>
-  </ion-card>
+
+      
+      <ion-list padding class="bg-list" style="border-radius: 10px;">
+          <button class="buttons-list" style="padding-top: 5px; height: 72px !important; padding-bottom: 5px;" ion-item *ngFor="let item of items; let i= index" (click)="responderModal(item)" icon-start>
+              <b style="font-size: 20px">{{i+1}}</b>.
+              <span style="font-size: 18px; font-weight: 300;">{{ item.description }}</span>
+            </button>
+      </ion-list>
 </ion-content>
 
 <ion-footer>

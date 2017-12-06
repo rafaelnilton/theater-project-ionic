@@ -12,13 +12,16 @@
 
 <ion-content padding class="bg-teatro">
 
+  <div class="logo">
+      <img style="opacity: 0.8" src="assets/imgs/like_deslike.png" alt="">
+  </div>
 
   <ion-item style="margin-top: 30px; background: none !important">
-    <button class="bt-participar" ion-button round outline>PERGUNTAR</button>
+    <button class="bt-participar" ion-button round outline (click)="perguntarPage()">PERGUNTAR</button>
   </ion-item>
 
   <ion-item style="background: none !important">
-    <button class="bt-participar responder" [navPush]="perguntasPage" ion-button round>RESPONDER</button>
+    <button class="bt-participar responder" (click)="perguntasPage()" ion-button round>RESPONDER</button>
   </ion-item>
 
 </ion-content>

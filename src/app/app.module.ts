@@ -16,6 +16,7 @@ import { ContatoPage } from '../pages/contato/contato';
 import { ParticiparPage } from '../pages/participar/participar';
 import { ResponderPage } from '../pages/responder/responder';
 import { PerguntasPage } from '../pages/perguntas/perguntas';
+import { PerguntarPage } from '../pages/perguntar/perguntar';
  
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PerguntasPage } from '../pages/perguntas/perguntas';
     ContatoPage,
     ParticiparPage,
     ResponderPage,
-    PerguntasPage
+    PerguntasPage,
+    PerguntarPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { PerguntasPage } from '../pages/perguntas/perguntas';
     ContatoPage,
     ParticiparPage,
     ResponderPage,
-    PerguntasPage
+    PerguntasPage,
+    PerguntarPage
   ],
   providers: [Data, StatusBar, SplashScreen, DatePickerModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
