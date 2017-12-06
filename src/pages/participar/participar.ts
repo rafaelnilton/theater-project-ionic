@@ -4,6 +4,7 @@ import { ModalController } from 'ionic-angular/components/modal/modal-controller
 import { ResponderPage } from '../responder/responder';
 import { PerguntasPage } from '../perguntas/perguntas';
 import { PerguntarPage } from '../perguntar/perguntar';
+import { VotarPage } from '../votar/votar';
 
 
 @IonicPage()
@@ -19,6 +20,10 @@ export class ParticiparPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ParticiparPage');
+  }
+
+  votarPage() {
+    this.navCtrl.push(VotarPage);
   }
 
   perguntasPage() {

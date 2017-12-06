@@ -1,18 +1,25 @@
-<!--
-  Generated template for the VotarPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
+    
+      <ion-navbar color="secondary" align-title="center">
+          
+        <ion-title class="title-sm center">
+            Votação
+        </ion-title>
+        
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding class="bg-teatro">
+    
+      <h5 style="color: white; font-weight: 300; margin-bottom: 30px; margin-top: 30px; line-height: 1.5"> Você concorda com o uso da tecnologia em sala de aula?</h5>
 
-  <ion-navbar>
-    <ion-title>Votar</ion-title>
-  </ion-navbar>
+          <img style="opacity: 0.8; width: 30%; margin-left: 12.5%; margin-right: 12.5%" (click)="likeAlert()" src="assets/imgs/like.png" alt="">
+          <img style="opacity: 0.8; width: 30%" src="assets/imgs/deslike.png" (click)="deslikeAlert()" alt="">
 
-</ion-header>
+          <ion-item style="background: none !important; margin-top: 20px">
+            <button class="bt-participar" ion-button round outline (click)="closeModal()">Sair</button>
+          </ion-item>
 
-
-<ion-content padding>
-
-</ion-content>
+    </ion-content>
