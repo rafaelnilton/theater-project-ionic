@@ -18,6 +18,9 @@ import { ResponderPage } from '../pages/responder/responder';
 import { PerguntasPage } from '../pages/perguntas/perguntas';
 import { PerguntarPage } from '../pages/perguntar/perguntar';
 import { VotarPage } from '../pages/votar/votar';
+import { HttpClientModule } from '@angular/common/http';
+import { EventoProvider } from '../providers/evento/evento';
+import { EnqueteProvider } from '../providers/enquete/enquete';
  
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { VotarPage } from '../pages/votar/votar';
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     DatePickerModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,6 +58,7 @@ import { VotarPage } from '../pages/votar/votar';
     PerguntarPage,
     VotarPage
   ],
-  providers: [Data, StatusBar, SplashScreen, DatePickerModule, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [Data, StatusBar, SplashScreen, DatePickerModule, EventoProvider, {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EnqueteProvider]
 })
 export class AppModule {}

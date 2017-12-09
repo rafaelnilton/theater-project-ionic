@@ -1,3 +1,4 @@
+import { EventoProvider } from './../../providers/evento/evento';
 import { Component } from '@angular/core';
 import { ModalController, NavController } from 'ionic-angular';
 import { AddItemPage } from '../add-item/add-item'
@@ -14,41 +15,25 @@ import { Observable } from "rxjs/Rx"
 })
 export class HomePage {
  
-  public eventos = [];
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public dataService: Data, public http: Http) {
- 
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public dataService: Data, 
+    public http: Http, public eventoProvider : EventoProvider) {
+      this.getEventos();
+    }
 
-    this.http.get('http://teatrofacisa.m1ller.com.br/api/eventos').map(res => res.json()).subscribe(data => {
-      console.log(">>>>>>>>>>>todos: ", data);
+    eventos : any;
+ 
+    getEventos() {
+      this.eventoProvider.getEventos()
+      .then(data => {
         this.eventos = data;
-    });
+        console.log(this.eventos);
+      });
+    }
 
-  }
- 
-  addItem(){
- 
-    let addModal = this.modalCtrl.create(AddItemPage);
- 
-    addModal.onDidDismiss((item) => {
- 
-          if(item){
-            this.saveItem(item);
-          }
- 
-    });
- 
-    addModal.present(); 
-  }
- 
-  saveItem(item){
-    this.items.push(item);
-    this.dataService.save(this.items);
-  }
- 
-  viewItem(item){
-    this.navCtrl.push(ItemDetailPage, {
-      item: item
-    });
-  }
+    viewEvento(item){
+      this.navCtrl.push(ItemDetailPage, {
+        item: item
+      });
+    }
  
 }
