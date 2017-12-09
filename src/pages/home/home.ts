@@ -14,13 +14,13 @@ import { Observable } from "rxjs/Rx"
 })
 export class HomePage {
  
-  public items = [];
+  public eventos = [];
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public dataService: Data, public http: Http) {
  
 
     this.http.get('http://teatrofacisa.m1ller.com.br/api/eventos').map(res => res.json()).subscribe(data => {
       console.log(">>>>>>>>>>>todos: ", data);
-        this.items = data;
+        this.eventos = data;
     });
 
   }

@@ -14,18 +14,18 @@
  
 <ion-content class="bg-teatro" scroll="false">
   <div class="logo">
-      <img src="assets/imgs/logo.png" />
+      <img style="opacity: 0.8" src="assets/imgs/logo.png" alt=""/>
   </div>
 
-  <h3 style="color: white; text-align: center; font-weight: 300">ÚLTIMOS EVENTOS</h3>
+  <h5 class="homeEventosCss">ÚLTIMOS EVENTOS</h5>
 
   <p>
-      <ion-scroll scroll="true" scrollbar-y="true" style="height: 250px">
-        <ion-list padding class="bg-list" style="border-radius: 10px;">
-          <ion-item style="padding-bottom: 5px; padding-top: 5px;" *ngFor="let item of items" (click)="viewItem(item)">
-            <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon><span style="font-size: 13px !important;"> {{item.data | date: 'dd/MM/yy' }}</span> -
-            <span style="font-size: 18px !important; font-weight: 300 !important">{{item.titulo}}</span></ion-item>
-        </ion-list>
+    <ion-scroll scroll="true" scrollbar-y="true" style="height: 250px">
+      <ion-list padding class="bg-list" style="border-radius: 10px;">
+        <ion-item style="padding-bottom: 5px; padding-top: 5px;" *ngFor="let item of items" (click)="viewItem(item)">
+          <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon><span style="font-size: 13px !important;"> {{item.data | date: 'dd/MM/yy' }}</span> -
+          <span style="font-size: 18px !important; font-weight: 300 !important">{{item.titulo}}</span></ion-item>
+      </ion-list>
     </ion-scroll>
     </p>
 </ion-content>

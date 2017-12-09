@@ -9,15 +9,14 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 })
 export class ResponderPage {
 
-  public pergunta: String = new String('Vocês utilizariam esta tecnologia nos seus projetos? Justifique');
-  public resposta: String = new String('');
+  public pergunta: String;
+  public resposta: String;
   public titulo : String;
   
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, 
+              public alertCtrl: AlertController) {
   }
 
- 
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'Resposta enviada!',

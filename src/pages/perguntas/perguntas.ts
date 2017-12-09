@@ -82,10 +82,7 @@ export class PerguntasPage {
   }
 
   public responderModal(item) {
-    var myModal = this.modalCtrl.create(ResponderPage, {
-      item: item
-    });
-    myModal.present();
+    this.navCtrl.push(ResponderPage, { item : item });
   }
 
 }

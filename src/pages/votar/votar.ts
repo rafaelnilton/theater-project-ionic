@@ -10,6 +10,8 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 })
 export class VotarPage {
 
+  enquete : String = new String("Você está gostanto da palestra?");
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, public alertCtrl: AlertController) {
   }
 
