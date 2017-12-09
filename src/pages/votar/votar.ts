@@ -19,13 +19,23 @@ export class VotarPage {
     console.log('ionViewDidLoad VotarPage');
   }
 
+  votar(codigoVoto) {
+
+    if (codigoVoto == 1){
+      this.likeAlert();
+    }else{
+      this.deslikeAlert();
+    }
+
+  }
+
   closeModal() {
     this.view.dismiss();
   }
 
   likeAlert() {
     let alert = this.alertCtrl.create({
-      title: 'SIM :)',
+      title: 'Que bom que você está gostando. :)',
       subTitle: '',
       buttons: ['Ok']
     });
@@ -34,7 +44,7 @@ export class VotarPage {
 
   deslikeAlert() {
     let alert = this.alertCtrl.create({
-      title: 'NÃO :(',
+      title: 'Vamos tentar melhorar o nível da Paletra, desculpe. :(',
       subTitle: '',
       buttons: ['Ok']
     });

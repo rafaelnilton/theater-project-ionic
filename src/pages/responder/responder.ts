@@ -2,6 +2,7 @@ import { EnqueteProvider } from './../../providers/enquete/enquete';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
+import { PerguntasPage } from '../perguntas/perguntas';
 
 @IonicPage()
 @Component({
@@ -18,19 +19,38 @@ export class ResponderPage {
   }
 
   enviarResposta (resposta) {
+    
+    if (resposta != null){
       this.enqueteProvider.addResposta(resposta);
       this.presentAlert();
+    }else{
+      this.errorAlert();
+    }
+      
   }
 
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'Resposta enviada!',
       subTitle: 'Sua resposta foi enviada com sucesso!',
-      buttons: ['Ok']
+      buttons: [{
+        text: 'OK',
+        handler: data => {
+          this.perguntasPage();
+        }
+      }]
     });
     alert.present();
   }
 
+  errorAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'A Resposta deve ser preenchida!',
+      subTitle: 'Estamos aguardando sua Resposta.',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
  
   ionViewDidLoad() {
     this.pergunta = this.navParams.get('pergunta').descricao;
@@ -38,6 +58,10 @@ export class ResponderPage {
 
   closeModal() {
     this.view.dismiss();
+  }
+
+  perguntasPage() {
+    this.navCtrl.push(PerguntasPage);
   }
 
 }

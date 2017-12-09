@@ -23,8 +23,13 @@ export class PerguntarPage {
   }
 
   salvarPergunta (pergunta){
-      this.enqueteProvider.addPergunta(pergunta);
-      this.presentAlert();
+
+      if (pergunta != null){
+        this.enqueteProvider.addPergunta(pergunta);
+        this.presentAlert();
+      }else{
+        this.errorAlert();
+      }
   }
 
   presentAlert() {
@@ -37,6 +42,15 @@ export class PerguntarPage {
           this.perguntasPage();
         }
       }]
+    });
+    alert.present();
+  }
+
+  errorAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'A Pergunta deve ser preenchida!',
+      subTitle: 'Estamos aguardando sua Pergunta.',
+      buttons: ['OK']
     });
     alert.present();
   }
