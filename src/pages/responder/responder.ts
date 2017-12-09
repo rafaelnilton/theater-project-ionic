@@ -1,3 +1,4 @@
+import { EnqueteProvider } from './../../providers/enquete/enquete';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
@@ -11,10 +12,14 @@ export class ResponderPage {
 
   public pergunta: String;
   public resposta: String;
-  public titulo : String;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, 
-              public alertCtrl: AlertController) {
+              public alertCtrl: AlertController, public enqueteProvider : EnqueteProvider) {
+  }
+
+  enviarResposta (resposta) {
+      this.enqueteProvider.addResposta(resposta);
+      this.presentAlert();
   }
 
   presentAlert() {
@@ -28,8 +33,7 @@ export class ResponderPage {
 
  
   ionViewDidLoad() {
-    this.titulo = this.navParams.get('item').title;
-    this.pergunta = this.navParams.get('item').description;
+    this.pergunta = this.navParams.get('pergunta').descricao;
   }
 
   closeModal() {

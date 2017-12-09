@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { apiUrl } from './../../constants/urlPadrao';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the EnqueteProvider provider.
@@ -11,41 +11,25 @@ import { apiUrl } from './../../constants/urlPadrao';
 @Injectable()
 export class EnqueteProvider {
 
-  constructor(public http: HttpClient) {}
+  perguntas: AngularFireList<any>;
+  respostas: AngularFireList<any>;
 
-  apiUrl : String = apiUrl;
+  constructor(public afDB: AngularFireDatabase) {}
 
-  responderPergunta(data) {
-    return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/eventos', JSON.stringify(data))
-        .subscribe(res => {
-          resolve(res);
-        }, (err) => {
-          reject(err);
-        });
-    });
+  getPerguntas() : Observable<any[]> {
+    return this.afDB.list('/perguntas').valueChanges();
   }
 
-  realizarPergunta(data) {
-    return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/eventos', JSON.stringify(data))
-        .subscribe(res => {
-          resolve(res);
-        }, (err) => {
-          reject(err);
-        });
-    });
+  getRespostas() : Observable<any[]> {
+    return this.afDB.list('/respostas').valueChanges();
   }
 
-  votarEnquete(data) {
-    return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/eventos', JSON.stringify(data))
-        .subscribe(res => {
-          resolve(res);
-        }, (err) => {
-          reject(err);
-        });
-    });
+  addPergunta (pergunta) {
+    this.afDB.list('/perguntas').push({ descricao : pergunta });
+  }
+  
+  addResposta (resposta) {
+    this.afDB.list('/respostas').push({ descricaoResposta : resposta });
   }
 
 }

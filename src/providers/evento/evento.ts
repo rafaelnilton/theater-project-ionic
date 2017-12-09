@@ -1,23 +1,16 @@
-import { apiUrl } from './../../constants/urlPadrao';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 
 @Injectable()
 export class EventoProvider {
 
-  constructor(public http: HttpClient) {}
+  constructor(public afDB: AngularFireDatabase) {}
 
-  apiUrl : String = apiUrl;
 
-  getEventos() {
-    return new Promise(resolve => {
-      this.http.get(this.apiUrl+'/eventos').subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
+  getEventos() : Observable<any[]> {
+    return this.afDB.list('/eventos').valueChanges();
   }
 
 }

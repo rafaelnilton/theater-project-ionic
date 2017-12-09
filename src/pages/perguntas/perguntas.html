@@ -9,9 +9,9 @@
 <ion-content padding class="bg-teatro">
   <ion-list padding class="bg-list" style="border-radius: 10px;">
       <button class="buttons-list" style="padding-top: 5px; height: 72px !important; padding-bottom: 5px;" 
-              ion-item *ngFor="let item of items; let i= index" (click)="responderModal(item)" icon-start>
+              ion-item *ngFor="let pergunta of perguntas | async ; let i= index" (click)="responderModal(pergunta)" icon-start>
           <b style="font-size: 20px">{{i+1}}</b>.
-          <span style="font-size: 18px; font-weight: 300;">{{ item.description }}</span>
+          <span style="font-size: 18px; font-weight: 300;">{{ pergunta.descricao }}</span>
         </button>
   </ion-list>
 </ion-content>

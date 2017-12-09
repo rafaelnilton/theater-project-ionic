@@ -1,8 +1,8 @@
+import { EnqueteProvider } from './../../providers/enquete/enquete';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
-import { ViewController } from 'ionic-angular/navigation/view-controller';
-
+import { PerguntasPage } from '../perguntas/perguntas';
 /**
  * Generated class for the PerguntarPage page.
  *
@@ -17,23 +17,37 @@ import { ViewController } from 'ionic-angular/navigation/view-controller';
 })
 export class PerguntarPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public view: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    public alertCtrl: AlertController, public view: ViewController,
+    public enqueteProvider : EnqueteProvider) {
   }
 
+  salvarPergunta (pergunta){
+      this.enqueteProvider.addPergunta(pergunta);
+      this.presentAlert();
+  }
 
-  public presentAlert() {
+  presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'Pergunta enviada!',
       subTitle: 'Obrigado por interagir conosco!',
-      buttons: ['Ok']
+      buttons: [{
+        text: 'OK',
+        handler: data => {
+          this.perguntasPage();
+        }
+      }]
     });
     alert.present();
   }
 
- 
   ionViewDidLoad() {
   }
 
+  perguntasPage() {
+    this.navCtrl.push(PerguntasPage);
+  }
+  
   closeModal() {
     this.view.dismiss();
   }
