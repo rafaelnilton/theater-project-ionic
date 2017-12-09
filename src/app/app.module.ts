@@ -21,6 +21,9 @@ import { VotarPage } from '../pages/votar/votar';
 import { HttpClientModule } from '@angular/common/http';
 import { EventoProvider } from '../providers/evento/evento';
 import { EnqueteProvider } from '../providers/enquete/enquete';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { FIREBASE_CREDENTIALS } from '../environments/configuracaoFirebase';
  
 @NgModule({
   declarations: [
@@ -42,7 +45,8 @@ import { EnqueteProvider } from '../providers/enquete/enquete';
     IonicStorageModule.forRoot(),
     DatePickerModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(FIREBASE_CREDENTIALS)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,7 +62,7 @@ import { EnqueteProvider } from '../providers/enquete/enquete';
     PerguntarPage,
     VotarPage
   ],
-  providers: [Data, StatusBar, SplashScreen, DatePickerModule, EventoProvider, {provide: ErrorHandler, useClass: IonicErrorHandler},
+  providers: [Data, StatusBar, SplashScreen, DatePickerModule, EventoProvider, AngularFireDatabase,{provide: ErrorHandler, useClass: IonicErrorHandler},
     EnqueteProvider]
 })
 export class AppModule {}

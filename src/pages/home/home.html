@@ -19,7 +19,7 @@
   <p>
     <ion-scroll scroll="true" scrollbar-y="true" style="height: 250px">
       <ion-list padding class="bg-list" style="border-radius: 10px;">
-        <ion-item style="padding-bottom: 5px; padding-top: 5px;" *ngFor="let evento of eventos" (click)="viewEvento(evento)">
+        <ion-item style="padding-bottom: 5px; padding-top: 5px;" *ngFor="let evento of eventos | async" (click)="viewEvento(evento)">
           <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon><span style="font-size: 13px !important;"> {{evento.data | date: 'dd/MM/yy' }}</span> -
           <span style="font-size: 18px !important; font-weight: 300 !important">{{evento.titulo}}</span></ion-item>
       </ion-list>
