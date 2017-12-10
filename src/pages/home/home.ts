@@ -30,9 +30,9 @@ export class HomePage {
     return loader;
   }
 
-  viewEvento(item){
+  viewEvento(evento){
     this.navCtrl.push(ItemDetailPage, {
-      item: item
+      evento: evento
     });
   }
  

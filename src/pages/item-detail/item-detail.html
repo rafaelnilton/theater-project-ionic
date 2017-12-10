@@ -8,7 +8,10 @@
  
 <ion-content padding class="bg-teatro">
   <ion-card>
-    <!-- <img style="width: 50%; margin: 0 auto; display: block;" src="{{imagem}}" /> -->
+    <img *ngIf="flagPossuiImagem == false" style="margin: 0 auto; display: block;"
+    [src]="imageNotFound"/>
+    <img *ngIf="flagPossuiImagem == true" style="margin: 0 auto; display: block;"
+         [src]="'data:image/jpeg;base64,'+image"/>
     <ion-card-content>
       {{data | date: 'dd/MM/yyyy' }} - {{titulo}}
     </ion-card-content>
