@@ -36,6 +36,7 @@ export class ResponderPage {
       buttons: [{
         text: 'OK',
         handler: data => {
+          this.resposta = '';
           this.perguntasPage();
         }
       }]

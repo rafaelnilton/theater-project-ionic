@@ -17,6 +17,8 @@ import { PerguntasPage } from '../perguntas/perguntas';
 })
 export class PerguntarPage {
 
+  public pergunta: String;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public alertCtrl: AlertController, public view: ViewController,
     public enqueteProvider : EnqueteProvider) {
@@ -39,6 +41,7 @@ export class PerguntarPage {
       buttons: [{
         text: 'OK',
         handler: data => {
+          this.pergunta = '';
           this.perguntasPage();
         }
       }]
