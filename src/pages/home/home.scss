@@ -4,7 +4,17 @@ page-home {
 
 .homeEventosCss {
     text-align: center;
+    color: white;
 }
+
+h5 {
+    color: white;
+}
+
+button {
+    border: 0 !important;
+}
+
 .bg-teatro {
     background: url("../assets/imgs/bg.jpg");
 }
@@ -35,7 +45,7 @@ page-home {
     width: 100%;
 }
 .logo img {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
     display: block;
     margin-top: 20px;
