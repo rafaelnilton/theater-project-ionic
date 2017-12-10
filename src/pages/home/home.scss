@@ -16,7 +16,11 @@ button {
 }
 
 .bg-teatro {
-    background: url("../assets/imgs/bg.jpg");
+    background-image: url("../assets/imgs/bg.jpg");
+    background-size: cover !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .toolbar-md-secondary .toolbar-background-md, .toolbar-background-md {
