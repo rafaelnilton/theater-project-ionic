@@ -1,34 +1,51 @@
 <ion-header>
-    
-      <ion-navbar color="secondary" align-title="center">
-          
-        <ion-title class="title-sm center">
-            Votação
-        </ion-title>
+    <ion-navbar color="secondary" align-title="center">
         
-      </ion-navbar>
+      <ion-title class="title-sm center">
+          Enquete 
+      </ion-title>
+      
+    </ion-navbar>
+  
+</ion-header>
     
-    </ion-header>
     
-    
-    <ion-content padding class="bg-teatro">
-    
-      <h5 class="enqueteCss">{{enquete}}</h5>
+<ion-content padding class="bg-teatro" *ngFor="let enquete of enquetes | async">
 
-          <img style="opacity: 0.8; width: 30%; margin-left: 12.5%; margin-right: 12.5%" (click)="votar(1)" src="assets/imgs/like.png" alt="">
-          <img style="opacity: 0.8; width: 30%" src="assets/imgs/deslike.png" (click)="votar(2)" alt="">
+  <ion-card>
+      
+    <img [src]="imagemEvento"/>
 
-          <ion-item style="background: none !important; margin-top: 20px">
-            <button class="bt-participar responder" ion-button round outline (click)="closeModal()">Sair</button>
-          </ion-item>
+    <ion-card-content>
+      <ion-card-title class="titoloEnquete">
+        {{enquete.titulo}}
+      </ion-card-title>
+      <p>
+        {{enquete.descricao}}
+      </p>
+    </ion-card-content>
 
-    </ion-content>
-    <ion-footer>
-      <ion-toolbar>
-          <div class="logo logo-rodape">
-              <img src="assets/imgs/logo.png" />
-          </div>
-        <ion-title class="title-center title-footer">teatro@unifacisa.edu.br</ion-title>
-        <br>
-    </ion-toolbar>
-  </ion-footer>
+    <ion-item (click)="votar('like')">
+      <ion-icon name='md-happy' item-start style="color: #1ee027"></ion-icon>
+      Estou gostando!
+      <ion-badge item-end>{{listaLike.length}}</ion-badge>
+    </ion-item>
+
+    <ion-item (click)="votar('deslike')">
+      <ion-icon name='md-sad' item-start style="color: #ce2626"></ion-icon>
+      Não estou gostando!
+      <ion-badge item-end>{{listaDeslike.length}}</ion-badge>
+    </ion-item>
+  </ion-card>
+      
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <div class="logo logo-rodape">
+          <img src="assets/imgs/logo.png" />
+      </div>
+    <ion-title class="title-center title-footer">teatro@unifacisa.edu.br</ion-title>
+    <br>
+  </ion-toolbar>
+</ion-footer>

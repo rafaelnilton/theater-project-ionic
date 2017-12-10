@@ -32,4 +32,8 @@ export class EnqueteProvider {
     this.afDB.list('/respostas').push({ descricaoResposta : resposta });
   }
 
+  getEnquetes () : Observable<any[]> {
+    return this.afDB.list('/enquetes').valueChanges();
+  }
+  
 }
